@@ -1,3 +1,5 @@
-export const Player = () => {
-
+export default class Player {
+    constructor() {
+          
+    }
 }

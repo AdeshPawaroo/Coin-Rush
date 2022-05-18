@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-   "browserslist": [
+  "browserslist": [
     "defaults"
   ],
   "scripts": {
@@ -27,5 +27,4 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   }
-  
 }
