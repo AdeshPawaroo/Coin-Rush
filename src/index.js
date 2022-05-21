@@ -1,10 +1,15 @@
 import Canvas from "./scripts/canvas.js";
+import Player from "./scripts/player.js";
 
 let canvas; 
 let background;
+let player;
+let model;
 
 document.addEventListener("DOMContentLoaded", function() {
     canvas = new Canvas();
+    player = new Player(canvas);
+    model = new Image();
 
     background = new Image();
     background.src = "./src/images/mountain.png";
