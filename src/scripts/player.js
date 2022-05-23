@@ -10,12 +10,15 @@ export default class Player {
     }
 
     move(keys) {
-        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1020) {
+        console.log(this.x, "x");
+        console.log(this.y, "y");
+
+        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1026) {
             this.x += 6;
             this.fY = 2;
             this.moving = true;
         }
-        if ((keys["s"] || keys["ArrowLeft"]) && this.x > 0) {
+        if ((keys["a"] || keys["ArrowLeft"]) && this.x > 0) {
             this.x -= 6;
             this.fY = 1;
             this.moving = true;
@@ -24,7 +27,7 @@ export default class Player {
             this.y -= 6;
             this.moving = true
         }
-        if (keys["s"] && this.y < 600) {
+        if (keys["s"] && this.y < 498) {
             this.y += 6;
             this.moving = true
         }
