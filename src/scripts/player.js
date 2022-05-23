@@ -10,7 +10,7 @@ export default class Player {
     }
 
     move(keys) {
-        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1320) {
+        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1020) {
             this.x += 6;
             this.fY = 2;
             this.moving = true;
