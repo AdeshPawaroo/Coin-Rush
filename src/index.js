@@ -1,10 +1,8 @@
 import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 
-let canvas; 
-let background;
-let player;
-let model;
+let canvas, background, player, model;
+let fps, fpsInterval, startTime, now, then, elapsed;
 let keys = [];
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         model.src = "./src/images/model3.png"
     });
 
-    animate();
+    // animate();
 
     window.addEventListener("keydown", function(e) {
         keys[e.key] = true;
@@ -54,13 +52,26 @@ document.addEventListener("DOMContentLoaded", function() {
     function drawSprite(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight) {
         canvas.ctx.drawImage(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
     }
+    
+    function startAnimating(fps) {
+        fpsInterval = 1000 / fps;
+        then = Date.now();
+        startTime = then;
+        animate();
+    }
 
     function animate() {
-        canvas.ctx.drawImage(background, 0, 0, 1100, 600);
-        drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
-        player.walkingAnimation();
-        player.move(keys);
-
         requestAnimationFrame(animate);
+        now = Date.now();
+        elapsed = now - then;
+        if (elapsed > fpsInterval) {
+            then = now - (elapsed % fpsInterval);
+            canvas.ctx.drawImage(background, 0, 0, 1100, 600);
+            drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
+            player.walkingAnimation();
+            player.move(keys);
+        }
     }
+
+    startAnimating(10);
 });

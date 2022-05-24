@@ -10,9 +10,6 @@ export default class Player {
     }
 
     move(keys) {
-        console.log(this.x, "x");
-        console.log(this.y, "y");
-
         if ((keys["d"] || keys["ArrowRight"]) && this.x < 1026) {
             this.x += 6;
             this.fY = 2;
@@ -35,9 +32,8 @@ export default class Player {
         }
     }
 
-
     walkingAnimation() {
-        if (this.fX < 10 && this.moving) {
+        if (this.fX < 3 && this.moving) {
             this.fX++;
         }else {
             this.fX = 0;
