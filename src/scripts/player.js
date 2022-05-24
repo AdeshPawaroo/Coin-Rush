@@ -25,17 +25,19 @@ export default class Player {
         }
         if (keys["w"] && this.y > 12) {
             this.y -= 6;
+            this.fY = 3 
             this.moving = true
         }
         if (keys["s"] && this.y < 498) {
             this.y += 6;
+            this.fY = 0
             this.moving = true
         }
     }
 
 
     walkingAnimation() {
-        if (this.fX < 3 && this.moving) {
+        if (this.fX < 10 && this.moving) {
             this.fX++;
         }else {
             this.fX = 0;

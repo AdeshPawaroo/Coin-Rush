@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     model = new Image();
     background = new Image();
 
-    background.src = "./src/images/mountain.png";
+    background.src = "./src/images/industrial.png";
     model.src = "./src/images/model1.png";
 
     document.getElementById("background-btn-1").addEventListener("click", function() {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function animate() {
-        canvas.ctx.drawImage(background, 0, 0, 1500, 800);
+        canvas.ctx.drawImage(background, 0, 0, 1100, 600);
         drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
         player.walkingAnimation();
         player.move(keys);
