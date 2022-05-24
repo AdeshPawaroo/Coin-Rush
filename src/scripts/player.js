@@ -1,7 +1,7 @@
 export default class Player {
     constructor() {
         this.x = 0;
-        this.y = 0;
+        this.y = 12;
         this.width = 32;
         this.height = 48;
         this.fX = 0;

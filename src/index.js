@@ -28,6 +28,18 @@ document.addEventListener("DOMContentLoaded", function() {
         background.src = "./src/images/mountain.png";
     });
 
+    document.getElementById("char-btn-1").addEventListener("click", function() {
+        model.src = "./src/images/model1.png"
+    });
+
+     document.getElementById("char-btn-2").addEventListener("click", function() {
+        model.src = "./src/images/model2.png"
+    });
+
+     document.getElementById("char-btn-3").addEventListener("click", function() {
+        model.src = "./src/images/model3.png"
+    });
+
     animate();
 
     window.addEventListener("keydown", function(e) {
