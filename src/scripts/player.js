@@ -1,3 +1,5 @@
+import Canvas from "./canvas";
+
 export default class Player {
     constructor() {
         this.x = 0;
@@ -7,10 +9,14 @@ export default class Player {
         this.fX = 0;
         this.fY = 0;
         this.moving = false;
+        this.canvas = new Canvas();
     }
 
     move(keys) {
-        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1026) {
+        console.log(this.x, 'x');
+        console.log((this.y, "y"));
+
+        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1020) {
             this.x += 20;
             this.fY = 2;
             this.moving = true;
