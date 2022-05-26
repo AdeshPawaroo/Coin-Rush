@@ -11,22 +11,22 @@ export default class Player {
 
     move(keys) {
         if ((keys["d"] || keys["ArrowRight"]) && this.x < 1026) {
-            this.x += 6;
+            this.x += 20;
             this.fY = 2;
             this.moving = true;
         }
         if ((keys["a"] || keys["ArrowLeft"]) && this.x > 0) {
-            this.x -= 6;
+            this.x -= 20;
             this.fY = 1;
             this.moving = true;
         }
         if (keys["w"] && this.y > 12) {
-            this.y -= 6;
+            this.y -= 20;
             this.fY = 3 
             this.moving = true
         }
         if (keys["s"] && this.y < 498) {
-            this.y += 6;
+            this.y += 20;
             this.fY = 0
             this.moving = true
         }
