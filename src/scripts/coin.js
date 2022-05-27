@@ -1,31 +1,36 @@
 export default class Coin {
     constructor() {
-        this.x = 400;
-        this.y = 232;
+        this.x = 520;
+        this.y = 52;
         this.fX = 0;
         this.fY = 0;
         this.width = 16;
         this.height = 16;
-        // this.positions = [
-        //     [0, 0]
-        // ];
-          this.positions = [
-            [84, 650],
-            [84, 270],
-            [84, 12],``
-            [372, 650], 
-            [372, 270],
-            [372, 12],
-            [684, 650],
-            [684, 270],
-            [684, 12],
-            [1014,650],
-            [1014, 270],
-            [1014, 12],
-            [1296, 650],
-            [1296, 270],
-            [1296, 12]
+        this.positions = [
+            [70, 52],
+            [320, 52],
+            [520, 52],
+            [740, 52],
+            [980, 52],
         ];
+    }
+
+     generatePos() {
+        let currentPos;
+        let newPos;
+        newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
+        while (newPos === currentPos) {
+            newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
+        }
+        this.x = newPos[0];
+        this.y = newPos[1];
+        this.score++;
+    }
+    
+    collected(player) {
+        if (player.x === this.x || player.x - this.x === -20 || player.x - this.x === 20 || player.x - this.x === 10 || player.x - this.x === -10) {
+            this.generatePos();
+        }
     }
 
     spinningAnimation() {

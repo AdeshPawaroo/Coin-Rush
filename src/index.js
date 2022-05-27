@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
             player.move(keys);
             drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
             coin.spinningAnimation();
+            coin.collected(player);
         }
     }
 
