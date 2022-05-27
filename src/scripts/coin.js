@@ -28,9 +28,14 @@ export default class Coin {
     }
     
     collected(player) {
-        if (player.x === this.x || player.x - this.x === -20 || player.x - this.x === 20 || player.x - this.x === 10 || player.x - this.x === -10) {
+        if ((player.x === this.x || player.x - this.x === -20 || player.x - this.x === 20 || player.x - this.x === 10 || player.x - this.x === -10) &&
+            (player.y === this.y || player.y - this.y === -20 || player.y - this.y === 20 || player.y - this.y === -40)
+        ) {
             this.generatePos();
         }
+        // if (player.y === this.y || player.y - this.y === -20 || player.y - this.y === 20 || player.y - this.y === -40) {
+        //     this.generatePos();
+        // }
     }
 
     spinningAnimation() {
