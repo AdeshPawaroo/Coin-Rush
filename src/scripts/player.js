@@ -13,9 +13,6 @@ export default class Player {
     }
 
     move(keys) {
-        console.log(this.x, 'x');
-        console.log(this.y, 'y');
-        
         if ((keys["d"] || keys["ArrowRight"]) && this.x < 1020) {
             this.x += 20;
             this.fY = 2;

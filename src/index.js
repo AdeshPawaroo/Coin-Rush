@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         elapsed = now - then;
         if (elapsed > fpsInterval) {
             then = now - (elapsed % fpsInterval);
-            canvas.ctx.drawImage(background, 0, 0, 1100, 600);
+            canvas.ctx.drawImage(background, 0, 0, 1120, 600);
             drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
             player.walkingAnimation();
             player.move(keys);
