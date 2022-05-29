@@ -3,7 +3,7 @@ import Canvas from "./canvas";
 export default class Player {
     constructor() {
         this.x = 0;
-        this.y = 12;
+        this.y = 0;
         this.width = 32;
         this.height = 48;
         this.fX = 0;
@@ -12,8 +12,10 @@ export default class Player {
         this.canvas = new Canvas();
     }
 
+    //0, 12
+
     move(keys) {
-        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1020) {
+        if ((keys["d"] || keys["ArrowRight"]) && this.x < 1040) {
             this.x += 20;
             this.fY = 2;
             this.moving = true;
@@ -28,7 +30,8 @@ export default class Player {
             this.fY = 3 
             this.moving = true
         }
-        if (keys["s"] && this.y < 498) {
+        //498
+        if (keys["s"] && this.y < 500) {
             this.y += 20;
             this.fY = 0
             this.moving = true
