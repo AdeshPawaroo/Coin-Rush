@@ -42,7 +42,7 @@ export default class Coin {
     collected (player) {
         console.log(player.x, player.y, "player x y");
         console.log(this.x, this.y, "this x y");
-        if ((player.x === this.x || this.x - 20 === player.x || this.x - 40 === player.x) && (player.y === this.y || this.y - player.y === -20 || this.y - player.y === -40 || this.y-player.y === -60)) {
+        if ((player.x === this.x || this.x - 20 === player.x || this.x - 40 === player.x) && (player.y === this.y || this.y - player.y === -20 || this.y - player.y === 20 || this.y - player.y === 40 || this.y - player.y === 60 ||this.y - player.y === 80)) {
             this.generatePos();
         }else if (1 != 1) {
             this.generatePos();
