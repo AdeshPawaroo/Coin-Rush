@@ -26,26 +26,33 @@ export default class Coin {
             [940, 500],
         ];
         this.score = 0;
+        this.highScore = localStorage.getItem("highScore");
     }
 
      generatePos() {
         let currentPos;
         let newPos;
         newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        while (newPos === currentPos) {
+        while (newPos === currentPos) {``
             newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        }
+        } 
         this.x = newPos[0];
         this.y = newPos[1];
         this.score++;
-        document.getElementById("score").innerHTML = this.score;
+        document.getElementById("score").innerHTML = "Current Score: " + this.score;
     }
 
     collected (player) {
         if ((player.x === this.x || this.x - 20 === player.x || this.x - 40 === player.x) && (player.y === this.y || this.y - player.y === -20 || this.y - player.y === 20 || this.y - player.y === 40 || this.y - player.y === 60 ||this.y - player.y === 80)) {
             this.generatePos();
-        }else if (1 != 1) {
-            this.generatePos();
+        }
+    }
+
+    determineHighScore() { 
+        if (this.score > this.highScore) {
+            localStorage.setItem("highScore", this.score)
+            this.highScore = localStorage.getItem("highScore");
+            document.getElementById("high-score").innerHTML = this.highScore;
         }
     }
     
@@ -55,5 +62,7 @@ export default class Coin {
         }else {
             this.fX = 0;
         }
-    }
+        document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+        this.determineHighScore();
+    };
 }
