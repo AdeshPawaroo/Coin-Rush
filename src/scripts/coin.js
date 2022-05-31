@@ -1,7 +1,7 @@
 export default class Coin {
     constructor() {
-        this.x = 60;
-        this.y = 60;
+        this.x = 500;
+        this.y = 280;
         this.fX = 0;
         this.fY = 0;
         this.width = 16;
@@ -25,6 +25,7 @@ export default class Coin {
             [720, 500],
             [940, 500],
         ];
+        this.score = 0;
     }
 
      generatePos() {
@@ -37,11 +38,10 @@ export default class Coin {
         this.x = newPos[0];
         this.y = newPos[1];
         this.score++;
+        document.getElementById("score").innerHTML = this.score;
     }
 
     collected (player) {
-        console.log(player.x, player.y, "player x y");
-        console.log(this.x, this.y, "this x y");
         if ((player.x === this.x || this.x - 20 === player.x || this.x - 40 === player.x) && (player.y === this.y || this.y - player.y === -20 || this.y - player.y === 20 || this.y - player.y === 40 || this.y - player.y === 60 ||this.y - player.y === 80)) {
             this.generatePos();
         }else if (1 != 1) {
