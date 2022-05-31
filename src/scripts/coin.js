@@ -52,7 +52,7 @@ export default class Coin {
         if (this.score > this.highScore) {
             localStorage.setItem("highScore", this.score)
             this.highScore = localStorage.getItem("highScore");
-            document.getElementById("high-score").innerHTML = this.highScore;
+            document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
         }
     }
     
@@ -64,5 +64,6 @@ export default class Coin {
         }
         document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
         this.determineHighScore();
+        // localStorage.clear();
     };
 }
