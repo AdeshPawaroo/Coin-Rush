@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
     model.src = "./src/images/model1.png";
     coinImg.src = "./src/images/coin.png";
 
+    document.getElementById("start-button").addEventListener("click", function() {
+        document.getElementById("splash-page").style.display = "none";
+        document.getElementById("game-canvas-container").style.display = "flex"
+    });
+
     document.getElementById("background-btn-1").addEventListener("click", function() {
         background.src = "./src/images/industrial.png";
     });
@@ -42,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
         model.src = "./src/images/model3.png"
     });
 
-    // animate();
-
     window.addEventListener("keydown", function(e) {
         keys[e.key] = true;
     });
@@ -62,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function startAnimating(fps) {
-        // fpsInterval = 1000 / fps;
         fpsInterval = 800 / fps;
         then = Date.now();
         startTime = then;
