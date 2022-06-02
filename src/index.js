@@ -2,7 +2,7 @@ import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 import Coin from "./scripts/coin";
 
-let canvas, background, player, model, coin, coinImg, timer, playing;
+let canvas, background, player, model, coin, coinImg, timer, playing, interval;
 let fps, fpsInterval, startTime, now, then, elapsed;
 let keys = [];
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("game-canvas-container").style.display = "flex";
         playing = true;
         startAnimating(10);
-        setInterval(tickDown, 1000);
+        interval = setInterval(tickDown, 1000);
     });
 
     document.getElementById("background-btn-1").addEventListener("click", function() {
@@ -82,7 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (playing === true && timer.innerHTML > 0) {
             timer.innerHTML--;
         }else {
+            document.getElementById("splash-page").style.display = "flex";
+            document.getElementById("game-canvas-container").style.display = "none";
             playing = false;
+            clearInterval(interval);
+            timer.innerHTML = 30;
         }
     }
 
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
         requestAnimationFrame(animate);
         now = Date.now();
         elapsed = now - then;
-        if (elapsed > fpsInterval) {
+        if (elapsed > fpsInterval && playing) {
             then = now - (elapsed % fpsInterval);
             canvas.ctx.drawImage(background, 0, 0, 1120, 600);
             drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
