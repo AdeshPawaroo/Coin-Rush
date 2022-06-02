@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("start-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
-        document.getElementById("game-canvas-container").style.display = "flex"
+        document.getElementById("game-canvas-container").style.display = "flex";
+        startAnimating(10);
     });
 
     document.getElementById("background-btn-1").addEventListener("click", function() {
@@ -85,7 +86,5 @@ document.addEventListener("DOMContentLoaded", function() {
             coin.spinningAnimation();
             coin.collected(player);
         }
-    }
-
-    startAnimating(10);
+    } 
 });

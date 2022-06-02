@@ -11,7 +11,7 @@ export default class Player {
         this.moving = false;
         this.canvas = new Canvas();
     }
-    
+
     move(keys) {
         if ((keys["d"] || keys["ArrowRight"]) && this.x < 1040) {
             this.x += 20;
@@ -28,7 +28,6 @@ export default class Player {
             this.fY = 3 
             this.moving = true
         }
-        //498
         if (keys["s"] && this.y < 500) {
             this.y += 20;
             this.fY = 0
