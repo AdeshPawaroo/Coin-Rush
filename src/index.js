@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("game-canvas-container").style.display = "none";
             playing = false;
             clearInterval(interval);
-            timer.innerHTML = 30;
+            timer.innerHTML = 6;
         }
     }
 
