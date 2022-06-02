@@ -2,7 +2,7 @@ import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 import Coin from "./scripts/coin";
 
-let canvas, background, player, model, coin, coinImg;
+let canvas, background, player, model, coin, coinImg, timer, playing;
 let fps, fpsInterval, startTime, now, then, elapsed;
 let keys = [];
 
@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     background = new Image();
     coin = new Coin();
     coinImg = new Image();
+    timer = document.getElementById("timer");
+    playing = false;
 
     background.src = "./src/images/industrial.png";
     model.src = "./src/images/model1.png";
@@ -21,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("start-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
         document.getElementById("game-canvas-container").style.display = "flex";
+        playing = true;
         startAnimating(10);
+        setInterval(tickDown, 1000);
     });
 
     document.getElementById("background-btn-1").addEventListener("click", function() {
@@ -66,10 +70,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function startAnimating(fps) {
-        fpsInterval = 800 / fps;
-        then = Date.now();
-        startTime = then;
-        animate();
+        if (playing === true) {
+            fpsInterval = 800 / fps;
+            then = Date.now();
+            startTime = then;
+            animate();
+        }
+    }
+
+    function tickDown() {
+        if (playing === true && timer.innerHTML > 0) {
+            timer.innerHTML--;
+        }else {
+            playing = false;
+        }
     }
 
     function animate() {

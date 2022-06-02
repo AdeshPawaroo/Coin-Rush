@@ -33,7 +33,7 @@ export default class Coin {
         let currentPos;
         let newPos;
         newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        while (newPos === currentPos) {``
+        while (newPos === currentPos) {
             newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
         } 
         this.x = newPos[0];
