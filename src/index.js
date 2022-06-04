@@ -78,15 +78,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function restartGame() {
+        document.getElementById("splash-page").style.display = "flex";
+        document.getElementById("game-canvas-container").style.display = "none";
+        clearInterval(interval);
+        timer.innerHTML = 5;
+        coin.resetPos();
+        player.resetPlayer();
+    }
+
     function tickDown() {
         if (playing === true && timer.innerHTML > 0) {
             timer.innerHTML--;
         }else {
-            document.getElementById("splash-page").style.display = "flex";
-            document.getElementById("game-canvas-container").style.display = "none";
-            playing = false;
-            clearInterval(interval);
-            timer.innerHTML = 6;
+            restartGame();
+            // document.getElementById("splash-page").style.display = "flex";
+            // document.getElementById("game-canvas-container").style.display = "none";
+            // playing = false;
+            // clearInterval(interval);
+            // timer.innerHTML = 6;
         }
     }
 

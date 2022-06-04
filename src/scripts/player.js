@@ -35,6 +35,13 @@ export default class Player {
         }
     }
 
+    resetPlayer() {
+        this.x = 0;
+        this.y = 0;
+        this.fX = 0;
+        this.fY = 0;
+    }
+
     walkingAnimation() {
         if (this.fX < 3 && this.moving) {
             this.fX++;

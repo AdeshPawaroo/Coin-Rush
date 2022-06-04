@@ -42,6 +42,13 @@ export default class Coin {
         document.getElementById("score").innerHTML = "Current Score: " + this.score;
     }
 
+    resetPos() {
+        this.score = 0;
+        document.getElementById("score").innerHTML = "Current Score: " + this.score;
+        this.x = 500;
+        this.y = 280;
+    }
+
     collected (player) {
         if ((player.x === this.x || this.x - 20 === player.x || this.x - 40 === player.x) && (player.y === this.y || this.y - player.y === -20 || this.y - player.y === 20 || this.y - player.y === 40 || this.y - player.y === 60 ||this.y - player.y === 80)) {
             this.generatePos();
