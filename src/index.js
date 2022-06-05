@@ -91,12 +91,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (playing === true && timer.innerHTML > 0) {
             timer.innerHTML--;
         }else {
+            playing = false;
             restartGame();
-            // document.getElementById("splash-page").style.display = "flex";
-            // document.getElementById("game-canvas-container").style.display = "none";
-            // playing = false;
-            // clearInterval(interval);
-            // timer.innerHTML = 6;
         }
     }
 
