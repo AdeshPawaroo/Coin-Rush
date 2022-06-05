@@ -1,8 +1,9 @@
 import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 import Coin from "./scripts/coin";
+import Gem from "./scripts/gem"
 
-let canvas, background, player, model, coin, coinImg, timer, playing, interval;
+let canvas, background, player, model, coin, coinImg, gem, gemImg, timer, playing, interval;
 let fps, fpsInterval, startTime, now, then, elapsed;
 let keys = [];
 
@@ -13,12 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
     background = new Image();
     coin = new Coin();
     coinImg = new Image();
+    gem = new Gem();
+    gemImg = new Image();
     timer = document.getElementById("timer");
     playing = false;
 
     background.src = "./src/images/industrial.png";
     model.src = "./src/images/model1.png";
-    coinImg.src = "./src/images/coin.png";
+    coinImg.src = "./src/images/coin1.png";
+    gemImg.src = "./src/images/gem.png";
 
     document.getElementById("start-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
@@ -69,6 +73,10 @@ document.addEventListener("DOMContentLoaded", function() {
         canvas.ctx.drawImage(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
     }
 
+    function drawGem(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight) {
+        canvas.ctx.drawImage(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
+    }
+
     function startAnimating(fps) {
         if (playing === true) {
             fpsInterval = 800 / fps;
@@ -82,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("splash-page").style.display = "block";
         document.getElementById("game-canvas-container").style.display = "none";
         clearInterval(interval);
-        timer.innerHTML = 5;
+        timer.innerHTML = 6;
         coin.resetPos();
         player.resetPlayer();
     }
@@ -106,9 +114,12 @@ document.addEventListener("DOMContentLoaded", function() {
             drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
             player.walkingAnimation();
             player.move(keys);
-            drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
-            coin.spinningAnimation();
-            coin.collected(player);
+            // drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
+            // coin.spinningAnimation();
+            // coin.collected(player);
+            drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, gem.x, gem.y, gem.width + 30, gem.height + 30);
+            gem.spinningAnimation();
+            gem.collected(player);
         }
     } 
 });
