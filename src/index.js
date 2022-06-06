@@ -20,6 +20,28 @@ document.addEventListener("DOMContentLoaded", function() {
     playing = false;
     window.score = 0;
     window.rand = Math.floor(Math.random() * 10) + 1;
+    window.positions = [
+        [60, 60],
+        [280, 60],
+        [500, 60],
+        [720, 60],
+        [940, 60],
+
+        [60, 280],
+        [280, 280],
+        [500, 280],
+        [720, 280],
+        [940, 280],
+
+        [60, 500],
+        [280, 500],
+        [500, 500],
+        [720, 500],
+        [940, 500],
+    ];
+    window.newPos =  positions[Math.floor(Math.random() * positions.length)];
+    window.x = 500;
+    window.y = 280;
 
     background.src = "./src/images/industrial.png";
     model.src = "./src/images/model1.png";
@@ -118,11 +140,11 @@ document.addEventListener("DOMContentLoaded", function() {
             player.walkingAnimation();
             player.move(keys);
             if (rand >= 7) {
-                drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, gem.x, gem.y, gem.width + 30, gem.height + 30);
+                drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, x, y, gem.width + 30, gem.height + 30);
                 gem.spinningAnimation();
                 gem.collected(player); 
             }else {
-                drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
+                drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
                 coin.spinningAnimation();
                 coin.collected(player);
             }

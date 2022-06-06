@@ -1,55 +1,46 @@
 export default class Gem {
     constructor() {
-        this.x = 500;
-        this.y = 280;
         this.fX = 0;
         this.fY = 0;
         this.width = 16;
         this.height = 16;
-        this.positions = [
-            [60, 60],
-            [280, 60],
-            [500, 60],
-            [720, 60],
-            [940, 60],
-
-            [60, 280],
-            [280, 280],
-            [500, 280],
-            [720, 280],
-            [940, 280],
-
-            [60, 500],
-            [280, 500],
-            [500, 500],
-            [720, 500],
-            [940, 500],
-        ];
         this.highScore = localStorage.getItem("highScore");
     }
 
     generatePos() {
-        let currentPos = [this.x, this.y];
-        let newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        while (currentPos[0] === newPos[0] && currentPos[1] === newPos[1]   ) {
-            newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
+        let currentPos = [x, y];
+        while (currentPos[0] === newPos[0] && currentPos[1] === newPos[1]) {
+            newPos = positions[Math.floor(Math.random() * positions.length)];
         }
-        this.x = newPos[0];
-        this.y = newPos[1];
+        x = newPos[0];
+        y = newPos[1];
         score = score + 2;
         document.getElementById("score").innerHTML = "Current Score: " + score;
         rand = Math.floor(Math.random() * 10) + 1;
     }
 
+    // generatePos() {
+    //     let currentPos = [x, y];
+    //     let newPos = positions[Math.floor(Math.random() * positions.length)];
+    //     while (currentPos[0] === newPos[0] && currentPos[1] === newPos[1]) {
+    //         newPos = positions[Math.floor(Math.random() * positions.length)];
+    //     }
+    //     x = newPos[0];
+    //     y = newPos[1];
+    //     score = score + 2;
+    //     document.getElementById("score").innerHTML = "Current Score: " + score;
+    //     rand = Math.floor(Math.random() * 10) + 1;
+    // }
+
     resetPos() {
         score = 0
         document.getElementById("score").innerHTML = "Current Score: " + score;
-        this.x = 500;
-        this.y = 280;
+        x = 500;
+        y = 280;
     }
 
     collected (player) {
-        if ((player.x === this.x || this.x - 20 === player.x || this.x - 40 === player.x) && (player.y === this.y || this.y - player.y === -20 || this.y - player.y === 20 || this.y - player.y === 40 || this.y - player.y === 60 ||this.y - player.y === 80)) {
+        if ((player.x === x || x - 20 === player.x || x - 40 === player.x) && (player.y === y || y - player.y === -20 || y - player.y === 20 || y - player.y === 40 || y - player.y === 60 || y - player.y === 80)) {
             this.generatePos();
         }
     }
