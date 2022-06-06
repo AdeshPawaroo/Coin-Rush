@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gemImg = new Image();
     timer = document.getElementById("timer");
     playing = false;
-    
+    window.score = 0;
     window.rand = Math.floor(Math.random() * 10) + 1;
 
     background.src = "./src/images/industrial.png";
@@ -127,13 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 coin.spinningAnimation();
                 coin.collected(player);
             }
-
-            // drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
-            // coin.spinningAnimation();
-            // coin.collected(player);
-            drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, gem.x, gem.y, gem.width + 30, gem.height + 30);
-            gem.spinningAnimation();
-            gem.collected(player);
         }
     } 
 });

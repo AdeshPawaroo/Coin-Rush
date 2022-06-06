@@ -25,7 +25,6 @@ export default class Gem {
             [720, 500],
             [940, 500],
         ];
-        this.score = 0;
         this.highScore = localStorage.getItem("highScore");
     }
 
@@ -38,14 +37,14 @@ export default class Gem {
         } 
         this.x = newPos[0];
         this.y = newPos[1];
-        this.score = this.score + 2;
-        document.getElementById("score").innerHTML = "Current Score: " + this.score;
+        score = score + 2;
+        document.getElementById("score").innerHTML = "Current Score: " + score;
         rand = Math.floor(Math.random() * 10) + 1;
     }
 
     resetPos() {
         this.score = 0;
-        document.getElementById("score").innerHTML = "Current Score: " + this.score;
+        document.getElementById("score").innerHTML = "Current Score: " + score;
         this.x = 500;
         this.y = 280;
     }
