@@ -43,7 +43,7 @@ export default class Coin {
     }
 
     resetPos() {
-        this.score = 0;
+        score = 0;
         document.getElementById("score").innerHTML = "Current Score: " + score;
         this.x = 500;
         this.y = 280;
@@ -56,8 +56,8 @@ export default class Coin {
     }
 
     determineHighScore() { 
-        if (this.score > this.highScore) {
-            localStorage.setItem("highScore", this.score)
+        if (score > this.highScore) {
+            localStorage.setItem("highScore", score)
             this.highScore = localStorage.getItem("highScore");
             document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
         }
