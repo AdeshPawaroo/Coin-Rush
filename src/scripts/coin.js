@@ -28,13 +28,12 @@ export default class Coin {
         this.highScore = localStorage.getItem("highScore");
     }
 
-     generatePos() {
-        let currentPos;
-        let newPos;
-        newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        while (newPos === currentPos) {
+    generatePos() {
+        let currentPos = [this.x, this.y];
+        let newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
+        while (currentPos[0] === newPos[0] && currentPos[1] === newPos[1]   ) {
             newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        } 
+        }
         this.x = newPos[0];
         this.y = newPos[1];
         score++;

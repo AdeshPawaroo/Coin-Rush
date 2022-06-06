@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clearInterval(interval);
         timer.innerHTML = 6;
         coin.resetPos();
+        gem.resetPos();
         player.resetPlayer();
     }
 
@@ -116,8 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
             drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
             player.walkingAnimation();
             player.move(keys);
-
-            console.log(rand, "rand");
             if (rand >= 7) {
                 drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, gem.x, gem.y, gem.width + 30, gem.height + 30);
                 gem.spinningAnimation();

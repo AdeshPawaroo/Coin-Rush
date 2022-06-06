@@ -28,13 +28,12 @@ export default class Gem {
         this.highScore = localStorage.getItem("highScore");
     }
 
-     generatePos() {
-        let currentPos;
-        let newPos;
-        newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        while (newPos === currentPos) {
+    generatePos() {
+        let currentPos = [this.x, this.y];
+        let newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
+        while (currentPos[0] === newPos[0] && currentPos[1] === newPos[1]   ) {
             newPos = this.positions[Math.floor(Math.random() * this.positions.length)];
-        } 
+        }
         this.x = newPos[0];
         this.y = newPos[1];
         score = score + 2;
@@ -43,7 +42,7 @@ export default class Gem {
     }
 
     resetPos() {
-        this.score = 0;
+        score = 0
         document.getElementById("score").innerHTML = "Current Score: " + score;
         this.x = 500;
         this.y = 280;
