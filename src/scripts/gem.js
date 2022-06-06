@@ -1,4 +1,4 @@
-export default class Coin {
+export default class Gem {
     constructor() {
         this.x = 500;
         this.y = 280;
@@ -37,7 +37,7 @@ export default class Coin {
         } 
         this.x = newPos[0];
         this.y = newPos[1];
-        score++;
+        score = score + 2;
         document.getElementById("score").innerHTML = "Current Score: " + score;
         rand = Math.floor(Math.random() * 10) + 1;
     }

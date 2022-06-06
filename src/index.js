@@ -1,8 +1,9 @@
 import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 import Coin from "./scripts/coin";
+import Gem from "./scripts/gem"
 
-let canvas, background, player, model, coin, coinImg, timer, playing;
+let canvas, background, player, model, coin, coinImg, gem, gemImg, timer, playing, interval;
 let fps, fpsInterval, startTime, now, then, elapsed;
 let keys = [];
 
@@ -13,19 +14,24 @@ document.addEventListener("DOMContentLoaded", function() {
     background = new Image();
     coin = new Coin();
     coinImg = new Image();
+    gem = new Gem();
+    gemImg = new Image();
     timer = document.getElementById("timer");
     playing = false;
+    window.score = 0;
+    window.rand = Math.floor(Math.random() * 10) + 1;
 
     background.src = "./src/images/industrial.png";
     model.src = "./src/images/model1.png";
-    coinImg.src = "./src/images/coin.png";
+    coinImg.src = "./src/images/coin1.png";
+    gemImg.src = "./src/images/gem.png";
 
     document.getElementById("start-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
         document.getElementById("game-canvas-container").style.display = "flex";
         playing = true;
         startAnimating(10);
-        setInterval(tickDown, 1000);
+        interval = setInterval(tickDown, 1000);
     });
 
     document.getElementById("background-btn-1").addEventListener("click", function() {
@@ -69,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
         canvas.ctx.drawImage(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
     }
 
+    function drawGem(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight) {
+        canvas.ctx.drawImage(image, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
+    }
+
     function startAnimating(fps) {
         if (playing === true) {
             fpsInterval = 800 / fps;
@@ -78,9 +88,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function restartGame() {
+        document.getElementById("splash-page").style.display = "block";
+        document.getElementById("game-canvas-container").style.display = "none";
+        clearInterval(interval);
+        timer.innerHTML = 6;
+        coin.resetPos();
+        player.resetPlayer();
+    }
+
     function tickDown() {
         if (playing === true && timer.innerHTML > 0) {
             timer.innerHTML--;
+        }else {
+            playing = false;
+            restartGame();
         }
     }
 
@@ -88,15 +110,23 @@ document.addEventListener("DOMContentLoaded", function() {
         requestAnimationFrame(animate);
         now = Date.now();
         elapsed = now - then;
-        if (elapsed > fpsInterval) {
+        if (elapsed > fpsInterval && playing) {
             then = now - (elapsed % fpsInterval);
             canvas.ctx.drawImage(background, 0, 0, 1120, 600);
             drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
             player.walkingAnimation();
             player.move(keys);
-            drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
-            coin.spinningAnimation();
-            coin.collected(player);
+
+            console.log(rand, "rand");
+            if (rand >= 7) {
+                drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, gem.x, gem.y, gem.width + 30, gem.height + 30);
+                gem.spinningAnimation();
+                gem.collected(player); 
+            }else {
+                drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, coin.x, coin.y, coin.width + 30, coin.height + 30);
+                coin.spinningAnimation();
+                coin.collected(player);
+            }
         }
     } 
 });

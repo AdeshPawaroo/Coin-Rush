@@ -35,3 +35,15 @@
   justify-content: space-evenly;
   width: 1100px;
 }
+
+#splash-page {
+  height: 100%;
+  width: 100%;
+  background-image: url("../src/images/starting_background.png");
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
