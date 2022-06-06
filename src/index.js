@@ -81,8 +81,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function tickDown() {
         if (playing === true && timer.innerHTML > 0) {
             timer.innerHTML--;
-        }else {
-            playing = false;
         }
     }
 
