@@ -1,5 +1,3 @@
-import Gem from "./gem";
-
 export default class Coin {
     constructor() {
         this.x = 500;
@@ -29,7 +27,6 @@ export default class Coin {
         ];
         this.score = 0;
         this.highScore = localStorage.getItem("highScore");
-        this.gem = new Gem();
     }
 
      generatePos() {
@@ -43,6 +40,7 @@ export default class Coin {
         this.y = newPos[1];
         this.score++;
         document.getElementById("score").innerHTML = "Current Score: " + this.score;
+        rand = Math.floor(Math.random() * 10) + 1;
     }
 
     resetPos() {

@@ -40,6 +40,7 @@ export default class Gem {
         this.y = newPos[1];
         this.score = this.score + 2;
         document.getElementById("score").innerHTML = "Current Score: " + this.score;
+        rand = Math.floor(Math.random() * 10) + 1;
     }
 
     resetPos() {
