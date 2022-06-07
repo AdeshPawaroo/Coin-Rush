@@ -19,19 +19,6 @@ export default class Gem {
         rand = Math.floor(Math.random() * 10) + 1;
     }
 
-    // generatePos() {
-    //     let currentPos = [x, y];
-    //     let newPos = positions[Math.floor(Math.random() * positions.length)];
-    //     while (currentPos[0] === newPos[0] && currentPos[1] === newPos[1]) {
-    //         newPos = positions[Math.floor(Math.random() * positions.length)];
-    //     }
-    //     x = newPos[0];
-    //     y = newPos[1];
-    //     score = score + 2;
-    //     document.getElementById("score").innerHTML = "Current Score: " + score;
-    //     rand = Math.floor(Math.random() * 10) + 1;
-    // }
-
     resetPos() {
         score = 0
         document.getElementById("score").innerHTML = "Current Score: " + score;
