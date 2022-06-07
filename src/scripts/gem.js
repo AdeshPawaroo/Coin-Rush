@@ -33,8 +33,12 @@ export default class Gem {
     }
 
     determineHighScore() { 
-        if (this.score > this.highScore) {
-            localStorage.setItem("highScore", this.score)
+        this.highScore = localStorage.getItem("highScore");
+        if (this.highScore === null) {
+            document.getElementById("high-score").innerHTML = "High Score: " + 0;
+        }
+        if (score > this.highScore) {
+            localStorage.setItem("highScore", score)
             this.highScore = localStorage.getItem("highScore");
             document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
         }
@@ -48,6 +52,6 @@ export default class Gem {
         }
         document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
         this.determineHighScore();
-        // localStorage.clear();
+        localStorage.clear();
     };
 }
