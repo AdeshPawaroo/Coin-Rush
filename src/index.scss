@@ -62,6 +62,21 @@
     font-size: 2rem;
 }
 
+#splash-page-button-container > input:hover {  
+    cursor: pointer;
+}
+
+#instructions-container {
+    height: 100%;
+    width: 100%;
+}
+
+#instructions {
+    border: black solid;
+    height: 50%;
+    width: 50%;
+}
+
 html, body {
     height: 100%;
     width: 100%;
