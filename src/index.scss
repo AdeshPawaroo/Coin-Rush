@@ -40,6 +40,26 @@
     width: 100%;
     background-image: url("../src/images/starting_background.png");
     font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash-page > h1 {
+    font-size: 5rem;
+    font-style: bolder;
+}
+
+#splash-page-button-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#splash-page-button-container > input {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
 }
 
 html, body {
