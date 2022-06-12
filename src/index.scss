@@ -69,12 +69,19 @@
 #instructions-container {
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 #instructions {
-    border: black solid;
-    height: 50%;
-    width: 50%;
+    height: 70%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
 }
 
 html, body {

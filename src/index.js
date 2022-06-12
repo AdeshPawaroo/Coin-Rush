@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("instruction-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
-        document.getElementById("instructions-container").style.display = "block";
+        document.getElementById("instructions-container").style.display = "flex";
     });
 
     document.getElementById("background-btn-1").addEventListener("click", function() {
