@@ -75,10 +75,23 @@
     font-style: bolder;
 }
 
+#game-options-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#game-options-container > input {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    border-radius: 10px;
+    border: black solid;
+}
+
 #splash-page-button-container {
     width: 50%;
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
 }
 
 #splash-page-button-container > input {
