@@ -42,17 +42,27 @@ document.addEventListener("DOMContentLoaded", function() {
     window.newPos =  positions[Math.floor(Math.random() * positions.length)];
     window.x = 500;
     window.y = 280;
+    window.endurance = false;
 
     background.src = "./src/images/industrial.png";
     model.src = "./src/images/model1.png";
     coinImg.src = "./src/images/coin1.png";
     gemImg.src = "./src/images/gem.png";
 
-    document.getElementById("start-button").addEventListener("click", function() {
+    document.getElementById("classic-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
         document.getElementById("game-canvas-container").style.display = "flex";
         playing = true;
         startAnimating(10);
+        interval = setInterval(tickDown, 1000);
+    });
+
+    document.getElementById("endurance-button").addEventListener("click", function() {
+        document.getElementById("splash-page").style.display = "none";
+        document.getElementById("game-canvas-container").style.display = "flex";
+        playing = true;
+        startAnimating(10);
+        endurance = true;
         interval = setInterval(tickDown, 1000);
     });
 
