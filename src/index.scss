@@ -11,11 +11,19 @@
     border-radius: 10px;
 }
 
+#timer {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
 #scores{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 500px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.5rem;
 }
 
 #score {
@@ -46,6 +54,8 @@
 #buttons-container > div > button {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
 //splash page
