@@ -66,6 +66,11 @@ document.addEventListener("DOMContentLoaded", function() {
         interval = setInterval(tickDown, 1000);
     });
 
+    document.getElementById("instructions-redirect").addEventListener("click", function() {
+        document.getElementById("instructions-container").style.display = "none";
+        document.getElementById("splash-page").style.display = "flex";
+    });
+
     document.getElementById("instruction-button").addEventListener("click", function() {
         document.getElementById("splash-page").style.display = "none";
         document.getElementById("instructions-container").style.display = "flex";

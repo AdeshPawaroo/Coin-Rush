@@ -112,6 +112,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+#instructions-container > input {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5rem;
 }
 
 #instructions {
