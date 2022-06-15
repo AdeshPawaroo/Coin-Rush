@@ -18,7 +18,7 @@ export default class Gem {
         document.getElementById("score").innerHTML = "Current Score: " + score;
         rand = Math.floor(Math.random() * 10) + 1;
         if (endurance === true) {
-            document.getElementById("timer").innerHTML = parseInt(document.getElementById("timer").innerHTML) + 1
+            document.getElementById("timer").innerHTML = parseInt(document.getElementById("timer").innerHTML) + 2;
         }
     }
 

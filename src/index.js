@@ -131,10 +131,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function restartGame() {
-        document.getElementById("splash-page").style.display = "block";
+        document.getElementById("splash-page").style.display = "flex";
         document.getElementById("game-canvas-container").style.display = "none";
         clearInterval(interval);
-        timer.innerHTML = 6;
+        timer.innerHTML = 30;
         coin.resetPos();
         gem.resetPos();
         player.resetPlayer();

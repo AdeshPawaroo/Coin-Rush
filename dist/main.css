@@ -102,6 +102,22 @@
   border: black solid;
 }
 
+#instruction-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+#instruction-button-container > input {
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: black solid;
+}
+
+#splash-page-button-container > div > input:hover {
+  cursor: pointer;
+}
+
 #splash-page-button-container > input:hover {
   cursor: pointer;
 }
@@ -118,6 +134,16 @@
 #instructions-container > input {
   font-family: "Kanit", sans-serif;
   font-size: 1.5rem;
+  border-radius: 10px;
+  border: black solid;
+}
+
+#instruction-button {
+  width: 50%;
+}
+
+#instructions-container > input:hover {
+  cursor: pointer;
 }
 
 #instructions {
