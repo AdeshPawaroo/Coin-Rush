@@ -23,12 +23,12 @@ export default class Player {
             this.fY = 1;
             this.moving = true;
         }
-        if (keys["w"] && this.y > 12) {
+        if (keys["w"] || keys["ArrowUp"] && this.y > 12) {
             this.y -= 20;
             this.fY = 3 
             this.moving = true
         }
-        if (keys["s"] && this.y < 500) {
+        if (keys["s"] || keys["ArrowDown"] && this.y < 500) {
             this.y += 20;
             this.fY = 0
             this.moving = true

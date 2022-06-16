@@ -102,6 +102,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("keydown", function(e) {
         keys[e.key] = true;
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft" || e.key === "ArrowUp" || e.key === "ArrowDown") {
+            e.preventDefault();
+        }
     });
 
     window.addEventListener("keyup", function(e) {
