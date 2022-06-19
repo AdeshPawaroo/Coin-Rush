@@ -134,7 +134,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function restartGame() {
-        document.getElementById("splash-page").style.display = "flex";
+        // document.getElementById("splash-page").style.display = "flex";
+        document.getElementById("post-game").style.display= "flex";
         document.getElementById("game-canvas-container").style.display = "none";
         clearInterval(interval);
         timer.innerHTML = 30;
