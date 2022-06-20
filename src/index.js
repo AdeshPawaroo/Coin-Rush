@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
     timer = document.getElementById("timer");
     playing = false;
     window.score = 0;
-    window.highScore = 0;
+    window.highScore = localStorage.getItem("highScore");
+    window.enduranceHighScore = localStorage.getItem("enduranceHighScore");
     window.rand = Math.floor(Math.random() * 10) + 1;
     window.positions = [
         [60, 60],
@@ -153,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("post-game").style.display= "flex";
         document.getElementById("game-canvas-container").style.display = "none";
         clearInterval(interval);
-        timer.innerHTML = 30;
+        timer.innerHTML = 5;
         coin.resetPos();
         gem.resetPos();
         player.resetPlayer();

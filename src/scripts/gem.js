@@ -4,7 +4,6 @@ export default class Gem {
         this.fY = 0;
         this.width = 16;
         this.height = 16;
-        this.highScore = localStorage.getItem("highScore");
     }
 
     generatePos() {
@@ -35,17 +34,41 @@ export default class Gem {
         }
     }
 
-    determineHighScore() { 
-        this.highScore = localStorage.getItem("highScore");
-        if (this.highScore === null) {
-            document.getElementById("high-score").innerHTML = "High Score: " + 0;
-        }
-        if (score > this.highScore) {
-            localStorage.setItem("highScore", score)
-            this.highScore = localStorage.getItem("highScore");
-            document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+    determineHighScore() {
+        if (endurance === true) {
+            enduranceHighScore = localStorage.getItem("enduranceHighScore");
+            if (enduranceHighScore === null) {
+                document.getElementById("highScore").innerHTML = "Endurance High Score: " + 0;
+            }
+            if (score > enduranceHighScore) {
+                localStorage.setItem("enduranceHighScore", score);
+                enduranceHighScore = localStorage.getItem("enduranceHighScore");
+                document.getElementById("high-score").innerHTML = "Endurace High Score: " + enduranceHighScore
+            }
+        }else {
+            highScore = localStorage.getItem("highScore");
+            if (highScore === null) {
+                document.getElementById("high-score").innerHTML = "High Score: " + 0;
+            }
+            if (score > highScore) {
+                localStorage.setItem("highScore", score);
+                highScore = localStorage.getItem("highScore");
+                document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+            }
         }
     }
+
+    // determineHighScore() { 
+    //     highScore = localStorage.getItem("highScore");
+    //     if (highScore === null) {
+    //         document.getElementById("high-score").innerHTML = "High Score: " + 0;
+    //     }
+    //     if (score > highScore) {
+    //         localStorage.setItem("highScore", score)
+    //         highScore = localStorage.getItem("highScore");
+    //         document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+    //     }
+    // }
     
     spinningAnimation() {
         if (this.fX < 3) {
@@ -53,8 +76,11 @@ export default class Gem {
         }else {
             this.fX = 0;
         }
-        document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+        // if (endurance === true) {
+        //     document.getElementById("high-score").innerHTML = "Endurace High Score: " + enduranceHighScore;
+        // }else {
+        //     document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+        // }
         this.determineHighScore();
-        localStorage.clear();
     };
 }
