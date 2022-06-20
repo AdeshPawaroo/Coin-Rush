@@ -4,7 +4,6 @@ export default class Coin {
         this.fY = 0;
         this.width = 16;
         this.height = 16;
-        this.highScore = localStorage.getItem("highScore");
     }
 
     generatePos() {
@@ -36,14 +35,14 @@ export default class Coin {
     }
 
     determineHighScore() { 
-        this.highScore = localStorage.getItem("highScore");
-        if (this.highScore === null) {
+        highScore = localStorage.getItem("highScore");
+        if (highScore === null) {
             document.getElementById("high-score").innerHTML = "High Score: " + 0;
         }
-        if (score > this.highScore) {
+        if (score > highScore) {
             localStorage.setItem("highScore", score);
-            this.highScore = localStorage.getItem("highScore");
-            document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+            highScore = localStorage.getItem("highScore");
+            document.getElementById("high-score").innerHTML = "High Score: " + highScore;
         }
     }
     
@@ -53,7 +52,7 @@ export default class Coin {
         }else {
             this.fX = 0;
         }
-        document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+        document.getElementById("high-score").innerHTML = "High Score: " + highScore;
         this.determineHighScore();
         // localStorage.clear();
     };

@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     timer = document.getElementById("timer");
     playing = false;
     window.score = 0;
+    window.highScore = 0;
     window.rand = Math.floor(Math.random() * 10) + 1;
     window.positions = [
         [60, 60],
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         [720, 500],
         [940, 500],
     ];
-    window.newPos =  positions[Math.floor(Math.random() * positions.length)];
+    window.newPos = positions[Math.floor(Math.random() * positions.length)];
     window.x = 500;
     window.y = 280;
     window.endurance = false;
@@ -76,6 +77,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("instructions-container").style.display = "flex";
     });
 
+    document.getElementById("restart-button").addEventListener("click", function () {
+        document.getElementById("game-canvas-container").style.display = "flex";
+        document.getElementById("post-game").style.display= "none";
+
+    });
+
     document.getElementById("background-btn-1").addEventListener("click", function() {
         background.src = "./src/images/industrial.png";
     });
@@ -99,6 +106,11 @@ document.addEventListener("DOMContentLoaded", function() {
      document.getElementById("char-btn-3").addEventListener("click", function() {
         model.src = "./src/images/model3.png"
     });
+
+    document.getElementById("current-overview").innerHTML = "Current Score: " + score;
+    document.getElementById("highscore-overview").innerHTML = "High Score: " + highScore;
+
+    
 
     window.addEventListener("keydown", function(e) {
         keys[e.key] = true;
