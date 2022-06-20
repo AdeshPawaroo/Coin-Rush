@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("restart-button").addEventListener("click", function () {
         document.getElementById("game-canvas-container").style.display = "flex";
         document.getElementById("post-game").style.display= "none";
+        playing = true;
+        startAnimating(10);
+        interval = setInterval(tickDown, 1000);
 
     });
 
