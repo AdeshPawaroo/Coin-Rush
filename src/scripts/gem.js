@@ -52,7 +52,7 @@ export default class Gem {
         }else {
             this.fX = 0;
         }
-        // document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+        document.getElementById("high-score").innerHTML = "High Score: " + highScore;
         this.determineHighScore();
     };
 }

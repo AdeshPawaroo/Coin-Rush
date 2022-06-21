@@ -23,16 +23,19 @@ export default class Player {
             this.fY = 1;
             this.moving = true;
         }
-        if (keys["w"] || keys["ArrowUp"] && this.y > 12) {
+        if ((keys["w"] || keys["ArrowUp"]) && this.y > 0) {
+            console.log("here");
             this.y -= 20;
             this.fY = 3 
             this.moving = true
         }
-        if (keys["s"] || keys["ArrowDown"] && this.y < 500) {
+        if ((keys["s"] || keys["ArrowDown"]) && this.y < 500) {
             this.y += 20;
             this.fY = 0
             this.moving = true
         }
+        console.log(this.x, "x");
+        console.log(this.y, "y");
     }
 
     resetPlayer() {
