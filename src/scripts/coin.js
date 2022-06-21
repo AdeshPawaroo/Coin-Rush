@@ -34,41 +34,17 @@ export default class Coin {
         }
     }
 
-    determineHighScore() {
-        if (endurance === true) {
-            enduranceHighScore = localStorage.getItem("enduranceHighScore");
-            if (enduranceHighScore === null) {
-                document.getElementById("highScore").innerHTML = "Endurance High Score: " + 0;
-            }
-            if (score > enduranceHighScore) {
-                localStorage.setItem("enduranceHighScore", score);
-                enduranceHighScore = localStorage.getItem("enduranceHighScore");
-                document.getElementById("high-score").innerHTML = "Endurace High Score: " + enduranceHighScore
-            }
-        }else {
+    determineHighScore() { 
+        highScore = localStorage.getItem("highScore");
+        if (highScore === null) {
+            document.getElementById("high-score").innerHTML = "High Score: " + 0;
+        }
+        if (score > highScore) {
+            localStorage.setItem("highScore", score);
             highScore = localStorage.getItem("highScore");
-            if (highScore === null) {
-                document.getElementById("high-score").innerHTML = "High Score: " + 0;
-            }
-            if (score > highScore) {
-                localStorage.setItem("highScore", score);
-                highScore = localStorage.getItem("highScore");
-                document.getElementById("high-score").innerHTML = "High Score: " + highScore;
-            }
+            document.getElementById("high-score").innerHTML = "High Score: " + highScore;
         }
     }
-
-    // determineHighScore() { 
-    //     highScore = localStorage.getItem("highScore");
-    //     if (highScore === null) {
-    //         document.getElementById("high-score").innerHTML = "High Score: " + 0;
-    //     }
-    //     if (score > highScore) {
-    //         localStorage.setItem("highScore", score);
-    //         highScore = localStorage.getItem("highScore");
-    //         document.getElementById("high-score").innerHTML = "High Score: " + highScore;
-    //     }
-    // }
     
     spinningAnimation() {
         if (this.fX < 3) {
@@ -76,11 +52,7 @@ export default class Coin {
         }else {
             this.fX = 0;
         }
-        // if (endurance === true) {
-        //     document.getElementById("high-score").innerHTML = "Endurace High Score: " + enduranceHighScore;
-        // }else {
-        //     document.getElementById("high-score").innerHTML = "High Score: " + highScore;
-        // }
+        // document.getElementById("high-score").innerHTML = "High Score: " + highScore;
         this.determineHighScore();
     };
 }
