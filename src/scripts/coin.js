@@ -34,15 +34,27 @@ export default class Coin {
         }
     }
 
-    determineHighScore() { 
+    determineHighScore() {
         highScore = localStorage.getItem("highScore");
-        if (highScore === null) {
-            document.getElementById("high-score").innerHTML = "High Score: " + 0;
-        }
-        if (score > highScore) {
-            localStorage.setItem("highScore", score);
-            highScore = localStorage.getItem("highScore");
-            document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+        enduranceHighScore = localStorage.getItem("enduranceHighScore");
+        if (endurance === false) {
+            if (highScore === null) {
+                document.getElementById("high-score").innerHTML = "High Score: " + 0;
+            }else {
+                document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+            }
+            if (score > highScore) {
+                localStorage.setItem("highScore", score);
+            }
+        }else {
+            if (enduranceHighScore === null) {
+                document.getElementById("high-score").innerHTML = "Endurance High Score: " + 0;
+            }else {
+                document.getElementById("high-score").innerHTML = "Endurance High Score: " + enduranceHighScore;
+            }
+            if (score > enduranceHighScore) {
+                localStorage.setItem("enduranceHighScore", score);
+            }
         }
     }
     
@@ -52,7 +64,10 @@ export default class Coin {
         }else {
             this.fX = 0;
         }
-        document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+        // document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+        // if (endurance === true) {
+        //      document.getElementById("high-score").innerHTML = "Endurance High Score: " + enduranceHighScore;
+        // }
         this.determineHighScore();
     };
 }

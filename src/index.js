@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
     timer = document.getElementById("timer");
     playing = false;
     window.score = 0;
+    // window.highScore = localStorage.setItem("highScore", 0);
+    // window.enduranceHighScore = localStorage.setItem("enduranceHighScore", 0);
     window.highScore = localStorage.getItem("highScore");
     window.enduranceHighScore = localStorage.getItem("enduranceHighScore");
     window.rand = Math.floor(Math.random() * 10) + 1;
@@ -150,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function restartGame() {
-        // document.getElementById("splash-page").style.display = "flex";
         document.getElementById("post-game").style.display= "flex";
         document.getElementById("game-canvas-container").style.display = "none";
         clearInterval(interval);
@@ -179,15 +180,18 @@ document.addEventListener("DOMContentLoaded", function() {
             drawSprite(model, player.width * player.fX, player.height * player.fY, player.width, player.height, player.x, player.y, player.width + 50, player.height + 50);
             player.walkingAnimation();
             player.move(keys);
-            if (rand >= 7) {
-                drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, x, y, gem.width + 30, gem.height + 30);
-                gem.spinningAnimation();
-                gem.collected(player); 
-            }else {
-                drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
-                coin.spinningAnimation();
-                coin.collected(player);
-            }
+            drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
+            coin.spinningAnimation();
+            coin.collected(player);
+            // if (rand >= 7) {
+            //     drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, x, y, gem.width + 30, gem.height + 30);
+            //     gem.spinningAnimation();
+            //     gem.collected(player); 
+            // }else {
+            //     drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
+            //     coin.spinningAnimation();
+            //     coin.collected(player);
+            // }
         }
     } 
 });
