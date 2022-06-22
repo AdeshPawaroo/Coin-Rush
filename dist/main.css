@@ -85,7 +85,7 @@
   font-family: "Kanit", sans-serif;
   font-size: 2rem;
   border-radius: 10px;
-  border: black solid;
+  border: 1px solid black;
 }
 
 #splash-page-button-container {
@@ -99,7 +99,7 @@
   font-family: "Kanit", sans-serif;
   font-size: 2rem;
   border-radius: 10px;
-  border: black solid;
+  border: 1px solid black;
 }
 
 #instruction-button-container {
@@ -111,7 +111,7 @@
   font-family: "Kanit", sans-serif;
   font-size: 2rem;
   border-radius: 10px;
-  border: black solid;
+  border: 1px solid black;
 }
 
 #splash-page-button-container > div > input:hover {
@@ -135,7 +135,7 @@
   font-family: "Kanit", sans-serif;
   font-size: 1.5rem;
   border-radius: 10px;
-  border: black solid;
+  border: 1px solid black;
 }
 
 #instruction-button {
@@ -184,7 +184,7 @@
   font-family: "Kanit", sans-serif;
   font-size: 2rem;
   border-radius: 10px;
-  border: black solid;
+  border: 1px solid black;
 }
 
 html, body {
