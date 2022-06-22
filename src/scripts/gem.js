@@ -57,18 +57,6 @@ export default class Gem {
             }
         }
     }
-
-    // determineHighScore() { 
-    //     highScore = localStorage.getItem("highScore");
-    //     if (highScore === null) {
-    //         document.getElementById("high-score").innerHTML = "High Score: " + 0;
-    //     }
-    //     if (score > highScore) {
-    //         localStorage.setItem("highScore", score)
-    //         highScore = localStorage.getItem("highScore");
-    //         document.getElementById("high-score").innerHTML = "High Score: " + highScore;
-    //     }
-    // }
     
     spinningAnimation() {
         if (this.fX < 3) {
@@ -76,10 +64,6 @@ export default class Gem {
         }else {
             this.fX = 0;
         }
-        // document.getElementById("high-score").innerHTML = "High Score: " + highScore;
-        // if (endurance === true) {
-        //      document.getElementById("high-score").innerHTML = "Endurance High Score: " + enduranceHighScore;
-        // }
         this.determineHighScore();
     };
 }

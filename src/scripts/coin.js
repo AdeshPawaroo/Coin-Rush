@@ -63,11 +63,7 @@ export default class Coin {
             this.fX++;
         }else {
             this.fX = 0;
-        }
-        // document.getElementById("high-score").innerHTML = "High Score: " + highScore;
-        // if (endurance === true) {
-        //      document.getElementById("high-score").innerHTML = "Endurance High Score: " + enduranceHighScore;
-        // }
+        } 
         this.determineHighScore();
     };
 }

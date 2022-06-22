@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     timer = document.getElementById("timer");
     playing = false;
     window.score = 0;
-    // window.highScore = localStorage.setItem("highScore", 0);
-    // window.enduranceHighScore = localStorage.setItem("enduranceHighScore", 0);
     window.highScore = localStorage.getItem("highScore");
     window.enduranceHighScore = localStorage.getItem("enduranceHighScore");
     window.rand = Math.floor(Math.random() * 10) + 1;
