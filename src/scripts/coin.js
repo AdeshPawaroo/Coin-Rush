@@ -4,7 +4,6 @@ export default class Coin {
         this.fY = 0;
         this.width = 16;
         this.height = 16;
-        this.highScore = localStorage.getItem("highScore");
     }
 
     generatePos() {
@@ -35,15 +34,27 @@ export default class Coin {
         }
     }
 
-    determineHighScore() { 
-        this.highScore = localStorage.getItem("highScore");
-        if (this.highScore === null) {
-            document.getElementById("high-score").innerHTML = "High Score: " + 0;
-        }
-        if (score > this.highScore) {
-            localStorage.setItem("highScore", score);
-            this.highScore = localStorage.getItem("highScore");
-            document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+    determineHighScore() {
+        highScore = localStorage.getItem("highScore");
+        enduranceHighScore = localStorage.getItem("enduranceHighScore");
+        if (endurance === false) {
+            if (highScore === null) {
+                document.getElementById("high-score").innerHTML = "High Score: " + 0;
+            }else {
+                document.getElementById("high-score").innerHTML = "High Score: " + highScore;
+            }
+            if (score > highScore) {
+                localStorage.setItem("highScore", score);
+            }
+        }else {
+            if (enduranceHighScore === null) {
+                document.getElementById("high-score").innerHTML = "Endurance High Score: " + 0;
+            }else {
+                document.getElementById("high-score").innerHTML = "Endurance High Score: " + enduranceHighScore;
+            }
+            if (score > enduranceHighScore) {
+                localStorage.setItem("enduranceHighScore", score);
+            }
         }
     }
     
@@ -52,9 +63,7 @@ export default class Coin {
             this.fX++;
         }else {
             this.fX = 0;
-        }
-        document.getElementById("high-score").innerHTML = "High Score: " + this.highScore;
+        } 
         this.determineHighScore();
-        // localStorage.clear();
     };
 }

@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
     <title>Coin Rush!</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?">
+    <link rel="manifest" href="/site.webmanifest">
 </head> 
 
 <body>
@@ -51,7 +56,7 @@
         <input id="instructions-redirect" type="button" value="Back to Menu">
     </div>
     <div id="game-canvas-container" style="display: none;">
-        <div id="timer">1</div>
+        <div id="timer">100000</div>
         <div id="scores">
             <div id="score">Current Score: 0</div>
             <div id="high-score">High Score: 0</div>
@@ -72,9 +77,12 @@
     </div>
     <div id="post-game" style="display: none;">
         <div id="game-over">
-            GAME OVER
+            GAME OVER!
         </div>
-        <div id="score-overview"></div>
+        <div id="score-overview">
+            <div id="current-overview"></div>
+            <div id="highscore-overview"></div>
+        </div>
         <div id="restart-button-container">
             <input id="restart-button" type="button" value="Restart!">
         </div>
