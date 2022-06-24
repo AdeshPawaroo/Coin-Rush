@@ -64,6 +64,7 @@
   height: 100%;
   width: 100%;
   background-image: url("../src/images/starting_background.png");
+  background-size: cover;
   font-family: "Kanit", sans-serif;
   display: flex;
   flex-direction: column;
