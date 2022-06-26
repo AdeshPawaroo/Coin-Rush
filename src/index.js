@@ -1,4 +1,4 @@
-import Canvas from "./scripts/canvas.js";
+ import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 import Coin from "./scripts/coin";
 import Gem from "./scripts/gem"
@@ -114,7 +114,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("current-overview").innerHTML = "Current Score: " + score;
     document.getElementById("highscore-overview").innerHTML = "High Score: " + highScore;
 
-    
+    document.getElementById("media1").addEventListener("click", function() {
+        window.open("https://github.com/AdeshPawaroo/Coin-Rush");
+    })
+
+    document.getElementById("media2").addEventListener("click", function() {
+        window.open("https://www.linkedin.com/in/adesh-pawaroo-997394226/");
+    })
 
     window.addEventListener("keydown", function(e) {
         keys[e.key] = true;
