@@ -187,6 +187,18 @@
     border: 1px solid black;
 }
 
+#media-container {
+    display: flex;
+    justify-content: space-evenly
+}
+
+#media {
+    border: black solid;
+    background-image: url("../src/images/github.png"); 
+    width: 300px;
+    height: 170px;
+}
+
 html, body {
     height: 100%;
     width: 100%;
