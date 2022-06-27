@@ -208,6 +208,10 @@
     background-size: cover;
 }
 
+#media-container > button:hover {
+    cursor: pointer;
+}
+
 html, body {
     height: 100%;
     width: 100%;
