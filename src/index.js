@@ -1,4 +1,4 @@
-import Canvas from "./scripts/canvas.js";
+ import Canvas from "./scripts/canvas.js";
 import Player from "./scripts/player.js";
 import Coin from "./scripts/coin";
 import Gem from "./scripts/gem"
