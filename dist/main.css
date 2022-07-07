@@ -195,31 +195,18 @@
 
 #media1 {
   border: none;
-<<<<<<< HEAD
   width: 300px;
   height: 170px;
   background-image: url("../src/images/github.png");
   background-size: cover;
-=======
-  background-image: url("../src/images/github.png");
-  width: 300px;
-  height: 170px;
->>>>>>> 8066f7f876171ef4d3dc7c9401e361ddc5e634ae
 }
 
 #media2 {
   border: none;
-<<<<<<< HEAD
   width: 300px;
   height: 170px;
   background-image: url("../src/images/linkedin.png");
   background-size: cover;
-=======
-  background-image: url("../src/images/linkedin.png");
-  background-size: cover;
-  width: 300px;
-  height: 170px;
->>>>>>> 8066f7f876171ef4d3dc7c9401e361ddc5e634ae
 }
 
 #media-container > button:hover {
