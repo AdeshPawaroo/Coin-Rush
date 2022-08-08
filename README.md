@@ -9,7 +9,13 @@ Live Site: [Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/)
 - HTLM 5 Canvas
 
 # Gameplay
-
+- The player controls the sprite by using either W/A/S/D or the arrow keys. 
+- An instruction page is available for the player to assist them.
+- Collect all of the coins / gems that are available around the map.
+- The highscore and current score is tracked and displayed to the player.
+- The player has the choice of selecting which character they desire to play as.
+- The player has the choice of selecting which map they desire to play on.
+- The player has the choice of selecting which game-mode they desire to play.
 
 In Coin-Rush, users will be able to:
 - Control a sprite and navigate around the map.
