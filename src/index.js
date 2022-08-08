@@ -187,15 +187,15 @@ document.addEventListener("DOMContentLoaded", function() {
             drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
             coin.spinningAnimation();
             coin.collected(player);
-            // if (rand >= 7) {
-            //     drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, x, y, gem.width + 30, gem.height + 30);
-            //     gem.spinningAnimation();
-            //     gem.collected(player); 
-            // }else {
-            //     drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
-            //     coin.spinningAnimation();
-            //     coin.collected(player);
-            // }
+            if (rand >= 7) {
+                drawGem(gemImg, gem.width * gem.fX, gem.height * gem.fY, gem.width, gem.height, x, y, gem.width + 30, gem.height + 30);
+                gem.spinningAnimation();
+                gem.collected(player); 
+            }else {
+                drawCoin(coinImg, coin.width * coin.fX, coin.height * coin.fY, coin.width, coin.height, x, y, coin.width + 30, coin.height + 30);
+                coin.spinningAnimation();
+                coin.collected(player);
+            }
         }
     } 
 });
