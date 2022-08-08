@@ -19,6 +19,8 @@ Live Site: [Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/)
 - The player has the choice of selecting which map they desire to play on.
 - The player has the choice of selecting which game-mode they desire to play.
 
+!(https://gyazo.com/60c229a2a0e12c889f4952f545a4f74d)
+
 # Significant Features
 ## Score / Highscore
 - The user's current score and highscore is updated in real-time. This utilizes local storage to accomplish this.
