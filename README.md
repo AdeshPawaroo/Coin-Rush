@@ -1,5 +1,8 @@
-# Coin-Rush
-"Coin-Rush" is a game coin themed game where the goal of the game is to simply gather as many coins as you can before the timer runs out! 
+# Overview
+
+[Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/) Live Site: 
+
+"Coin-Rush" is a coin themed game where the goal of the game is to simply gather as many coins as you can before the timer runs out! There are two different game-modes available to the player: 
 
 In Coin-Rush, users will be able to:
 - Control a sprite and navigate around the map.
