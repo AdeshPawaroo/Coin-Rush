@@ -21,8 +21,6 @@ Live Site: [Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/)
 
 ![60c229a2a0e12c889f4952f545a4f74d](https://user-images.githubusercontent.com/80853626/183473649-e3b2ffb7-7469-4dce-b258-8031fbd87287.gif)
 
-![gif](https://gyazo.com/60c229a2a0e12c889f4952f545a4f74d)
-
 # Significant Features
 ## Score / Highscore
 - The user's current score and highscore is updated in real-time. This utilizes local storage to accomplish this.
