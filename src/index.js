@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("post-game").style.display= "flex";
         document.getElementById("game-canvas-container").style.display = "none";
         clearInterval(interval);
-        timer.innerHTML = 5;
+        timer.innerHTML = 30;
         coin.resetPos();
         gem.resetPos();
         player.resetPlayer();
