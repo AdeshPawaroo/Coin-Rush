@@ -17,6 +17,9 @@ Live Site: [Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/)
 - The player has the choice of selecting which map they desire to play on.
 - The player has the choice of selecting which game-mode they desire to play.
 
+# Significant Features
+## test
+
 In Coin-Rush, users will be able to:
 - Control a sprite and navigate around the map.
 - Collect all of the coins / gems that are around the map.
