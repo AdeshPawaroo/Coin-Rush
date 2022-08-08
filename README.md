@@ -18,7 +18,10 @@ Live Site: [Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/)
 - The player has the choice of selecting which game-mode they desire to play.
 
 # Significant Features
+## Score / Highscore
+The users current score and highscore is updated in real-time. This utilizes local storage to accomplish this.
 ## test
+
 
 In Coin-Rush, users will be able to:
 - Control a sprite and navigate around the map.
