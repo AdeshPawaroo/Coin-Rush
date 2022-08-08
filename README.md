@@ -4,6 +4,8 @@ Live Site: [Coin-Rush](https://adeshpawaroo.github.io/Coin-Rush/)
 
 "Coin-Rush" is a coin themed game where the goal of the game is to simply gather as many coins as you can before the timer runs out! There is also an endurance game-mode available that grants the player adds time to the timer for every coin collected.
 
+![image](https://user-images.githubusercontent.com/80853626/183465077-8724dd62-7e8c-4402-a0d0-a3b38d049da0.png)
+
 # Technologies Used
 - JavaScript
 - HTLM 5 Canvas
